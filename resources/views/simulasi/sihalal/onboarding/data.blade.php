@@ -106,7 +106,8 @@
         btn.addEventListener('click', function () {
             try {
                 sessionStorage.setItem('sim_sihalal_profil', JSON.stringify({
-                    nib: d.nib, nama_perusahaan: d.nama_perusahaan, kategori: d.kategori, skala: d.skala, modal_dasar: d.modal_dasar
+                    nib: d.nib, nama_perusahaan: d.nama_perusahaan, npwp: d.npwp, alamat: d.alamat,
+                    kategori: d.kategori, skala: d.skala, modal_dasar: d.modal_dasar
                 }));
             } catch (e) {}
             window.location.href = @json(route('simulasi.sihalal.dashboard'));

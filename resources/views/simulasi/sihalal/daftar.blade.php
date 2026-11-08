@@ -21,7 +21,7 @@
                     <select id="tipe" class="input">
                         <option value="" selected disabled>Tipe Pengguna</option>
                         @foreach (config('sihalal.tipe_pengguna') as $tipe)
-                            <option>{{ $tipe }}</option>
+                            <option value="{{ $tipe }}">{{ $tipe }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -73,6 +73,7 @@
     document.getElementById('formDaftar').addEventListener('submit', function () {
         try {
             sessionStorage.setItem('sim_sihalal', JSON.stringify({
+                tipe: document.getElementById('tipe').value,
                 nama: document.getElementById('nama').value,
                 email: document.getElementById('email').value,
                 hp: document.getElementById('hp').value
