@@ -6,39 +6,21 @@ return [
         'status' => 'Akun Aktif',
     ],
 
-    'tipe_pengguna' => ['Pelaku Usaha', 'Pendamping PPH', 'Importir'],
+    'tipe_pengguna' => ['Pelaku Usaha', 'Fasilitator'],
 
     'menu' => [
         [
-            'judul' => 'Kalkulator',
-            'item' => [
-                ['label' => 'Kalkulator Simulasi Perhitungan Biaya Audit', 'ikon' => 'grid', 'route' => null],
-            ],
-        ],
-        [
             'judul' => 'Menu Utama',
             'item' => [
-                ['label' => 'Pelaku Usaha', 'ikon' => 'user', 'route' => null],
+                ['label' => 'Pelaku Usaha', 'ikon' => 'user', 'route' => 'simulasi.sihalal.pelaku-usaha'],
                 ['label' => 'Dashboard', 'ikon' => 'home', 'route' => 'simulasi.sihalal.dashboard'],
             ],
         ],
         [
             'judul' => 'Sertifikasi Halal',
             'item' => [
-                ['label' => 'Pengajuan Reguler', 'ikon' => 'id', 'route' => null],
-                ['label' => 'Pengajuan Self Declare', 'ikon' => 'id', 'route' => null],
-                ['label' => 'Pengajuan Self Declare (Halalmax)', 'ikon' => 'id', 'route' => null],
-                ['label' => 'Pengajuan Self Declare Mandiri', 'ikon' => 'id', 'route' => null],
-                ['label' => 'Status Permohonan', 'ikon' => 'list', 'route' => null],
-                ['label' => 'Tagihan / Invoice', 'ikon' => 'invoice', 'route' => null],
-            ],
-        ],
-        [
-            'judul' => 'Registrasi SHLN',
-            'item' => [
-                ['label' => 'Submissions', 'ikon' => 'upload', 'route' => null],
-                ['label' => 'Pelaporan', 'ikon' => 'flag', 'route' => null],
-                ['label' => 'Invoice', 'ikon' => 'doc', 'route' => null],
+                ['label' => 'Pengajuan Self Declare', 'ikon' => 'id', 'route' => 'simulasi.sihalal.self-declare'],
+                ['label' => 'Status Permohonan', 'ikon' => 'list', 'route' => 'simulasi.sihalal.status'],
             ],
         ],
     ],

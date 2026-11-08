@@ -54,6 +54,9 @@ Route::middleware('auth')->group(function () {
             Route::view('/onboarding/nib', 'simulasi.sihalal.onboarding.nib')->name('onboarding.nib');
             Route::view('/onboarding/data', 'simulasi.sihalal.onboarding.data')->name('onboarding.data');
             Route::view('/dashboard', 'simulasi.sihalal.dashboard')->name('dashboard');
+            Route::view('/pelaku-usaha', 'simulasi.sihalal.pelaku-usaha')->name('pelaku-usaha');
+            Route::view('/pengajuan-self-declare', 'simulasi.sihalal.self-declare')->name('self-declare');
+            Route::view('/status-permohonan', 'simulasi.sihalal.status')->name('status');
         });
     });
 

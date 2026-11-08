@@ -139,13 +139,14 @@
                     </script>
                     <p>Kelola proses sertifikasi halal Anda dengan lebih rapi, cepat, dan terpantau di satu tempat.</p>
                     <div class="chips" id="chips">
-                        <span class="chip">@include('simulasi.partials.ikon', ['nama' => 'user']) {{ $pengguna['tipe'] }}</span>
+                        <span class="chip" id="tipePengguna">@include('simulasi.partials.ikon', ['nama' => 'user']) <span>{{ $pengguna['tipe'] }}</span></span>
                         <span class="chip hijau">@include('simulasi.partials.ikon', ['nama' => 'shield']) {{ $pengguna['status'] }}</span>
                     </div>
                     <div class="notif-umk" id="noticeNonUmk" style="display:none"></div>
                     <div class="aksi">
-                        <a href="#" class="btn btn-primer" data-segera>@include('simulasi.partials.ikon', ['nama' => 'book']) Buka Dokumentasi</a>
-                        <a href="#" class="btn btn-garis" data-segera>@include('simulasi.partials.ikon', ['nama' => 'list']) Lihat Status Pengajuan</a>
+                        <a href="{{ route('simulasi.sihalal.pelaku-usaha') }}" class="btn btn-garis">@include('simulasi.partials.ikon', ['nama' => 'user']) Isi Profil Usaha</a>
+                        <a href="{{ route('simulasi.sihalal.self-declare') }}" class="btn btn-primer">@include('simulasi.partials.ikon', ['nama' => 'id']) Buat Pengajuan</a>
+                        <a href="{{ route('simulasi.sihalal.status') }}" class="btn btn-garis">@include('simulasi.partials.ikon', ['nama' => 'list']) Lihat Status Pengajuan</a>
                     </div>
                 </div>
 
@@ -245,6 +246,11 @@
 <script>
     (function () {
         var p = null;
+        var akun = null;
+        try { akun = JSON.parse(sessionStorage.getItem('sim_sihalal') || 'null'); } catch (e) {}
+        if (akun && akun.tipe) {
+            document.querySelector('#tipePengguna span').textContent = akun.tipe;
+        }
         try { p = JSON.parse(sessionStorage.getItem('sim_sihalal_profil') || 'null'); } catch (e) {}
         if (!p) return;
 

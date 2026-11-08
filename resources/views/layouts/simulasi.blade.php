@@ -82,7 +82,7 @@
         (function () {
             function bersihkan() {
                 try {
-                    ['sim_sihalal', 'sim_sihalal_nama', 'sim_sihalal_nib', 'sim_sihalal_profil'].forEach(function (k) { sessionStorage.removeItem(k); });
+                    ['sim_sihalal', 'sim_sihalal_nama', 'sim_sihalal_nib', 'sim_sihalal_profil', 'sim_sihalal_self_declare'].forEach(function (k) { sessionStorage.removeItem(k); });
                 } catch (e) {}
             }
             document.getElementById('keluarSimulasi').addEventListener('click', bersihkan);
